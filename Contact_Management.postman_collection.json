@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "2a1811f9-d10a-4e1f-ad2c-06816aa0411d",
+		"name": "Contact_Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16145419"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Arindam\",\r\n    \"email\":\"arindampanda2001@gmail.com\",\r\n    \"password\":\"abcd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{userHost}}/register/"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"arindampanda2001@gmail.com\",\r\n    \"password\":\"abcd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{userHost}}/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Loggedin User Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTI3ZTkxMDQzMzFkNjcwODZhMjJiMTciLCJ1c2VybmFtZSI6IkFyaW5kYW0iLCJlbWFpbCI6ImFyaW5kYW1wYW5kYTIwMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZkE1YmVENWpqQ2FBVHlic3F4MHlWdVhKTVFHYTh4aWhHT3lsb2xLSkVaaEttNi5CRDFoUUsiLCJjcmVhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJ1cGRhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJfX3YiOjAsImlhdCI6MTY5NzExNDU0OCwiZXhwIjoxNjk3MTE2MzQ4fQ.yLP6V39zXVuJUXkNHRSYkfpcjnMaSHqr54S8wZN3F6w",
+								"type": "text"
+							}
+						],
+						"url": "{{userHost}}/currentUser"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Create New Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTI3ZTkxMDQzMzFkNjcwODZhMjJiMTciLCJ1c2VybmFtZSI6IkFyaW5kYW0iLCJlbWFpbCI6ImFyaW5kYW1wYW5kYTIwMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZkE1YmVENWpqQ2FBVHlic3F4MHlWdVhKTVFHYTh4aWhHT3lsb2xLSkVaaEttNi5CRDFoUUsiLCJjcmVhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJ1cGRhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJfX3YiOjAsImlhdCI6MTY5NzExNDU0OCwiZXhwIjoxNjk3MTE2MzQ4fQ.yLP6V39zXVuJUXkNHRSYkfpcjnMaSHqr54S8wZN3F6w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Arindam 3\",\r\n    \"email\":\"arindampanda2001@gmail.com\",\r\n    \"phone\":\"7076910530\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{contactHost}}/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Contacts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTI3ZTkxMDQzMzFkNjcwODZhMjJiMTciLCJ1c2VybmFtZSI6IkFyaW5kYW0iLCJlbWFpbCI6ImFyaW5kYW1wYW5kYTIwMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZkE1YmVENWpqQ2FBVHlic3F4MHlWdVhKTVFHYTh4aWhHT3lsb2xLSkVaaEttNi5CRDFoUUsiLCJjcmVhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJ1cGRhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJfX3YiOjAsImlhdCI6MTY5NzExNDU0OCwiZXhwIjoxNjk3MTE2MzQ4fQ.yLP6V39zXVuJUXkNHRSYkfpcjnMaSHqr54S8wZN3F6w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Arindam 3\",\r\n    \"email\":\"arindampanda2001@gmail.com\",\r\n    \"phone\":\"7076910530\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{contactHost}}/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Single Contact",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTI3ZTkxMDQzMzFkNjcwODZhMjJiMTciLCJ1c2VybmFtZSI6IkFyaW5kYW0iLCJlbWFpbCI6ImFyaW5kYW1wYW5kYTIwMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZkE1YmVENWpqQ2FBVHlic3F4MHlWdVhKTVFHYTh4aWhHT3lsb2xLSkVaaEttNi5CRDFoUUsiLCJjcmVhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJ1cGRhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJfX3YiOjAsImlhdCI6MTY5NzExNDU0OCwiZXhwIjoxNjk3MTE2MzQ4fQ.yLP6V39zXVuJUXkNHRSYkfpcjnMaSHqr54S8wZN3F6w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{contactHost}}/6527ed8d4331d67086a22b31"
+					},
+					"response": []
+				},
+				{
+					"name": "Update A Contact",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTI3ZTkxMDQzMzFkNjcwODZhMjJiMTciLCJ1c2VybmFtZSI6IkFyaW5kYW0iLCJlbWFpbCI6ImFyaW5kYW1wYW5kYTIwMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZkE1YmVENWpqQ2FBVHlic3F4MHlWdVhKTVFHYTh4aWhHT3lsb2xLSkVaaEttNi5CRDFoUUsiLCJjcmVhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJ1cGRhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJfX3YiOjAsImlhdCI6MTY5NzExNDU0OCwiZXhwIjoxNjk3MTE2MzQ4fQ.yLP6V39zXVuJUXkNHRSYkfpcjnMaSHqr54S8wZN3F6w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Arindam 34\",\r\n    \"email\":\"arindampanda2001@gmail.com2\",\r\n    \"phone\":\"7076910531\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{contactHost}}/6527ebad4331d67086a22b1b"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Contact",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTI3ZTkxMDQzMzFkNjcwODZhMjJiMTciLCJ1c2VybmFtZSI6IkFyaW5kYW0iLCJlbWFpbCI6ImFyaW5kYW1wYW5kYTIwMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZkE1YmVENWpqQ2FBVHlic3F4MHlWdVhKTVFHYTh4aWhHT3lsb2xLSkVaaEttNi5CRDFoUUsiLCJjcmVhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJ1cGRhdGVkQXQiOiIyMDIzLTEwLTEyVDEyOjM5OjQ0Ljg3OVoiLCJfX3YiOjAsImlhdCI6MTY5NzExNDU0OCwiZXhwIjoxNjk3MTE2MzQ4fQ.yLP6V39zXVuJUXkNHRSYkfpcjnMaSHqr54S8wZN3F6w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{contactHost}}/6527ebc54331d67086a22b1f"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "contactHost",
+			"value": "http://localhost:4500/api/contacts",
+			"type": "string"
+		},
+		{
+			"key": "userHost",
+			"value": "http://localhost:4500/api/users",
+			"type": "string"
+		}
+	]
+}
